@@ -4,18 +4,16 @@ with open('input5.txt', 'r') as f:
     row=[i for i in range(128)]
     column=[i for i in range(8)]
     
-    lrow=len(row)-1
-    lcol=len(column)-1
+    lrow=len(row)
+    lcol=len(column)
     
     ans=[]
     for data in lst:
-        for deco in data:
-            if data.index(deco)==len(data)-1: ans.append((row[lrow], column[lcol]))
-            
-            elif deco=='F':
+        for deco in list(data):
+            if deco=='F':
                 lrow//=2
                 row=row[:lrow]
-            
+                
             elif deco=='B':
                 lrow//=2
                 row=row[lrow:]
@@ -27,11 +25,13 @@ with open('input5.txt', 'r') as f:
             elif deco=='R':
                 lcol//=2
                 column=column[lcol:]
-                
+        
+        ans.append((row[0]*8)+column[0])
+        
         row=[i for i in range(128)]
         column=[i for i in range(8)]
     
-        lrow=len(row)-1
-        lcol=len(column)-1
+        lrow=len(row)
+        lcol=len(column)
         
-    print(ans)
+    print(max(ans))

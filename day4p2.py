@@ -10,14 +10,7 @@
 7. pid (Passport ID) - a nine-digit number, including leading zeroes.
 8. cid (Country ID) - ignored, missing or not.
 '''
-def checker(wrd):
-    a='ghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    for i in list(a):
-        if i in wrd:
-            return 0
-            break
-    else:
-        return 1
+import re
 
 with open('input4.txt', 'r') as f:
     correct=0
@@ -46,24 +39,24 @@ with open('input4.txt', 'r') as f:
         for i in data:
         
             if 'byr' in i:
-                if int(i[4:])>=1920 or int(i[4:])<=2002: cou.append('byr')
+                if 1920<=int(i[4:])<=2002: cou.append('byr')
                     
             elif 'iyr' in i:
-                if int(i[4:])>=2010 or int(i[4:])<=2020: cou.append('iyr')
+                if 2010<=int(i[4:])<=2020: cou.append('iyr')
                     
             elif 'eyr' in i:
-                if int(i[4:])>=2020 or int(i[4:])<=2030: cou.append('eyr')
+                if 2020<=int(i[4:])<=2030: cou.append('eyr')
                     
             elif 'hgt' in i:
                 if 'cm' in i:
-                    if int(i[4:].rstrip('cm'))>=150 or int(i[4:].rstrip('cm'))<=193: cou.append('hgt')
+                    if 150<=int(i[4:].rstrip('cm'))<=193: cou.append('hgt')
                         
-                elif 'in'==i[len(i)-3:len(i)]:
-                    if int(i[4:].rstrip('in'))>=59 or int(i[4:].rstrip('in'))<=76: cou.append('hgt')
+                elif 'in' in i:
+                    if 59<=int(i[4:].rstrip('in'))<=76: cou.append('hgt')
                         
             elif 'hcl' in i:
                 if '#' in i[4:]:
-                    if len(i[4:].lstrip('#'))==6 and checker(i[4:].lstrip('#'))==1: cou.append('hcl')
+                    if len(i[4:].lstrip('#'))==6 and re.match(r'[0-9|a-f]{6}', i[4:].lstrip('#')): cou.append('hcl') 
             
             elif 'ecl' in i:
                 if i[4:]=='amb' or i[4:]=='blu' or i[4:]=='brn' or i[4:]=='gry' or i[4:]=='grn' or i[4:]=='hzl' or i[4:]=='oth': cou.append('ecl')

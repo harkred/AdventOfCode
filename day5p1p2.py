@@ -1,3 +1,4 @@
+#Part1
 with open('input5.txt', 'r') as f:
     lst=[i.rstrip('\n') for i in f.readlines()]
     
@@ -35,3 +36,10 @@ with open('input5.txt', 'r') as f:
         lcol=len(column)
         
     print(max(ans))
+    
+    
+    #Part2
+    for i in ans:
+        if i+1 not in ans and i+2 in ans:
+            print(i+1)
+   

@@ -72,6 +72,7 @@ with open('input4.txt', 'r') as f:
         if len(cou)==7: correct+=1
         else: pass
         cou=[]
+        
     print(correct)
                 
         

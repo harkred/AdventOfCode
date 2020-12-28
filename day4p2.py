@@ -29,7 +29,7 @@ with open('input4.txt', 'r') as f:
             lst.append(tlst)
             tlst=[]
         else: continue
-    
+
     nlst=[]
     ulst=[]
     for data in lst:
@@ -37,27 +37,29 @@ with open('input4.txt', 'r') as f:
             nlst.extend(word.split())
         ulst.append(nlst)
         nlst=[]
-
+    
+    ulst.append(['ecl:#a16ec8','pid:187cm', 'hcl:z', 'iyr:2029', 'hgt:170', 'byr:2008'])
+    
     #Updated
     cou=[]
     for data in ulst:
         for i in data:
         
             if 'byr' in i:
-                if int(i[4:])>=1920 and int(i[4:])<=2002: cou.append('byr')
+                if int(i[4:])>=1920 or int(i[4:])<=2002: cou.append('byr')
                     
             elif 'iyr' in i:
-                if int(i[4:])>=2010 and int(i[4:])<=2020: cou.append('iyr')
+                if int(i[4:])>=2010 or int(i[4:])<=2020: cou.append('iyr')
                     
             elif 'eyr' in i:
-                if int(i[4:])>=2020 and int(i[4:])<=2030: cou.append('eyr')
+                if int(i[4:])>=2020 or int(i[4:])<=2030: cou.append('eyr')
                     
             elif 'hgt' in i:
                 if 'cm' in i:
-                    if int(i[4:].rstrip('cm'))>=150 and int(i[4:].rstrip('cm'))<=193: cou.append('hgt')
+                    if int(i[4:].rstrip('cm'))>=150 or int(i[4:].rstrip('cm'))<=193: cou.append('hgt')
                         
                 elif 'in'==i[len(i)-3:len(i)]:
-                    if int(i[4:].rstrip('in'))>=59 and int(i[4:].rstrip('in'))<=76: cou.append('hgt')
+                    if int(i[4:].rstrip('in'))>=59 or int(i[4:].rstrip('in'))<=76: cou.append('hgt')
                         
             elif 'hcl' in i:
                 if '#' in i[4:]:

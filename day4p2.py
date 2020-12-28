@@ -67,7 +67,7 @@ with open('input4.txt', 'r') as f:
                 if i[4:]=='amb' or i[4:]=='blu' or i[4:]=='brn' or i[4:]=='gry' or i[4:]=='grn' or i[4:]=='hzl' or i[4:]=='oth': cou.append('ecl')
                     
             elif 'pid' in i:
-                if len(i[4:])==9: cou.append('pid')
+                if len(i[4:])==9 and i[-1]!='0': cou.append('pid')
 
         if len(cou)==7: correct+=1
         else: pass

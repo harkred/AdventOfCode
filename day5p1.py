@@ -23,7 +23,6 @@ with open('input5.txt', 'r') as f:
             elif deco=='L':
                 lcol//=2
                 column=column[:lcol]
-                print(column, lcol)
                 
             elif deco=='R':
                 lcol//=2

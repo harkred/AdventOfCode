@@ -6,6 +6,7 @@ with open('input6.txt', 'r') as f:
     for i in lst:
         tlst.append(i)
         if i=='' or lst.index(i)==len(lst)-1:
+            if lst.index(i)!=len(lst)-1: tlst.pop(-1)
             a=('').join(tlst)
             alst=list(a)
             b=set(alst)

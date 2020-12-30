@@ -5,7 +5,7 @@ with open('input6.txt', 'r') as f:
     lst=[i.rstrip('\n') for i in f.readlines()]
     for i in lst:
         tlst.append(i)
-        if i=='' or i==lst[len(lst)-1]:
+        if i=='' or lst.index(i)==len(lst)-1:
             a=('').join(tlst)
             alst=list(a)
             b=set(alst)

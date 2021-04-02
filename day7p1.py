@@ -1,8 +1,12 @@
-with open('input7.txt', 'r') as f:
+with open(r'AdventOfCode\input7.txt', 'r') as f:
     NEED = 'shiny gold'
+    
     rules = [i.rstrip('\n') for i in f.readlines()]
     rules = [(i[0:i.index('bags')], i[(i.index('contain')+8):]) for i in rules]
+    
     bags = []
+    count = 0
+
     for i in rules:
         if NEED in i[1]: 
             count += 1
@@ -16,4 +20,5 @@ with open('input7.txt', 'r') as f:
             else: continue
 
     count = len(set(bags))
+    
     print(count)

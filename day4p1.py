@@ -1,29 +1,19 @@
-with open(r"C:\Users\DELL\Downloads\best_python\input4.txt") as f:
-    lst=[i for i in f.readlines()]
-    chk_lst=('byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid')
-    nlst=[]
-    corr=0
+with open(r"AdventOfCode\input4.txt") as f:
+    lst = [i for i in f.readlines()]
+    chk_lst = ('byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid')
+    nlst = []
+    corr = 0
     for i in lst:
         nlst.append(i)
-        if i=='\n':
-            cou=0
+        if i == '\n':
+            cou = 0
             for j in chk_lst:
                 for k in nlst:
                     if j in k:
-                        cou+=1
-            if cou==len(chk_lst):
-                corr+=1
-            cou=0
-            nlst=[]
-    print(corr)
-                        
-                
-                
-            
+                        cou += 1
+            if cou == len(chk_lst):
+                corr += 1
+            cou = 0
+            nlst = []
     
-            
-
-                
-            
-        
-        
+    print(corr)

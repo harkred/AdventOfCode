@@ -1,9 +1,10 @@
-with open('input6.txt', 'r') as f:
+with open(r'AdventOfCode\input6.txt', 'r') as f:
     lst = [i.rstrip('\n') for i in f.readlines()]
     lst.append('')
+    
     correct = 0
     tlst = []
-    print(lst)
+
     for i in lst:
         tlst.append(i)
         
@@ -19,10 +20,11 @@ with open('input6.txt', 'r') as f:
                 for i in tlst:
                     nlst.extend(list(i))
                 
-                mlst=set(nlst)
+                mlst = set(nlst)
                     
                 for j in mlst:
                     if nlst.count(j) == len(tlst): correct += 1
 
                 tlst = []                 
+    
     print(correct)

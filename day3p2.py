@@ -1,4 +1,4 @@
-with open(r"AdventOfCode\input3.txt") as f:
+with open(r"input3.txt") as f:
     mapo = [i.rstrip('\n') for i in f.readlines()]
 
     cursor1 = 0

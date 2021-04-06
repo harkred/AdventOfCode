@@ -1,4 +1,4 @@
-with open(r'AdventOfCode\input7.txt', 'r') as f:
+with open(r'input7.txt', 'r') as f:
     NEED = 'shiny gold'
     
     rules = [i.rstrip('\n') for i in f.readlines()]

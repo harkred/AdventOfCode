@@ -1,4 +1,4 @@
-with open(r'AdventOfCode\input6.txt', 'r') as f:
+with open(r'input6.txt', 'r') as f:
     lst = [i.rstrip('\n') for i in f.readlines()]
     lst.append('')
     

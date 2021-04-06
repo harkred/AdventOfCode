@@ -1,4 +1,4 @@
-with open(r"AdventOfCode\input2.txt") as f:
+with open(r"input2.txt") as f:
     lst = [i.rstrip('\n') for i in f]
     correct = 0
     for patt in lst:

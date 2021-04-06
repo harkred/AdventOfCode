@@ -1,5 +1,5 @@
 #Part1
-with open(r'AdventOfCode\input5.txt', 'r') as f:
+with open(r'input5.txt', 'r') as f:
     lst = [i.rstrip('\n') for i in f.readlines()]
     
     row = [i for i in range(128)]

@@ -1,4 +1,4 @@
-with open(r'AdventOfCode\input6.txt', 'r') as f:
+with open(r'input6.txt', 'r') as f:
     ans = 0
     tlst = []
     alst = []

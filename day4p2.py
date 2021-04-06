@@ -12,7 +12,7 @@
 '''
 import re
 
-with open(r'AdventOfCode\input4.txt', 'r') as f:
+with open(r'input4.txt', 'r') as f:
     correct = 0
     lst = []
     tlst = []

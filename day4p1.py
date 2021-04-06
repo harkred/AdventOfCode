@@ -1,4 +1,4 @@
-with open(r"AdventOfCode\input4.txt") as f:
+with open(r"input4.txt") as f:
     lst = [i for i in f.readlines()]
     chk_lst = ('byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid')
     nlst = []
